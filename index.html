@@ -8,19 +8,19 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 class="main-title">Daily Agenda</h1>
+    <h1 class="main-title">To Do Status</h1>
     <div class="drag-container">
       <ul class="drag-list">
-        <!-- Waiting List Column -->
-        <li class="drag-column waiting-column">
+        <!-- Backlog Column -->
+        <li class="drag-column backlog-column">
           <span class="header">
             <h1>Waiting List</h1>
           </span>
-          <!-- Waiting List Content -->
-          <div id="waiting-content" class="custom-scroll">
+          <!-- Backlog Content -->
+          <div id="backlog-content" class="custom-scroll">
             <ul
               class="drag-item-list"
-              id="waiting-list"
+              id="backlog-list"
               ondrop="drop(event)"
               ondragover="allowDrop(event)"
               ondragenter="dragEnter(0)"
@@ -43,16 +43,16 @@
           </div>
         </li>
 
-        <!-- In Progress Column -->
-        <li class="drag-column inProgress-column">
+        <!-- Progress Column -->
+        <li class="drag-column progress-column">
           <span class="header">
             <h1>In Progress</h1>
           </span>
-          <!--In Progress Content -->
-          <div id="inProgress-content" class="custom-scroll">
+          <!-- Progress Content -->
+          <div id="progress-content" class="custom-scroll">
             <ul
               class="drag-item-list"
-              id="inProgress-list"
+              id="progress-list"
               ondrop="drop(event)"
               ondragover="allowDrop(event)"
               ondragenter="dragEnter(1)"
@@ -74,16 +74,16 @@
           </div>
         </li>
 
-        <!-- Completed Column -->
-        <li class="drag-column completed-column">
+        <!-- Complete Column -->
+        <li class="drag-column complete-column">
           <span class="header">
             <h1>Completed</h1>
           </span>
-          <!-- Completed Content -->
-          <div id="completed-content" class="custom-scroll">
+          <!-- Complete Content -->
+          <div id="complete-content" class="custom-scroll">
             <ul
               class="drag-item-list"
-              id="completed-list"
+              id="complete-list"
               ondrop="drop(event)"
               ondragover="allowDrop(event)"
               ondragenter="dragEnter(2)"
@@ -105,21 +105,22 @@
           </div>
         </li>
 
-        <!-- Canceled Column -->
-        <li class="drag-column canceled-column">
+        <!-- On Hold Column -->
+        <li class="drag-column on-hold-column">
           <span class="header">
             <h1>Canceled</h1>
           </span>
-          <!-- Canceled Content -->
-          <div id="canceled-content" class="custom-scroll">
+          <!-- On Hold  Content -->
+          <div id="on-hold-content" class="custom-scroll">
             <ul
               class="drag-item-list"
-              id="canceled-list"
+              id="on-hold-list"
               ondrop="drop(event)"
               ondragover="allowDrop(event)"
               ondragenter="dragEnter(3)"
             ></ul>
           </div>
+
           <!-- Add Button Group -->
           <div class="add-btn-group">
             <div class="add-btn" onclick="showInputBox(3)">
