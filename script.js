@@ -32,10 +32,10 @@ function getSavedColumns() {
     completeListArray = JSON.parse(localStorage.completeItems);
     canceledListArray = JSON.parse(localStorage.canceledItems);
   } else {
-    waitingListArray = ["Release the course", "Sit back and relax"];
-    progressListArray = ["Work on projects", "Listen to music"];
-    completeListArray = ["Being cool", "Getting stuff done"];
-    canceledListArray = ["Being uncool"];
+    waitingListArray = ["Release the task"];
+    progressListArray = ["Work on projects"];
+    completeListArray = ["Have a coffee"];
+    canceledListArray = ["Sit back and relax"];
   }
 }
 

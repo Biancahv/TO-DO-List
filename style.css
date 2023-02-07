@@ -15,7 +15,8 @@ body {
   margin: 0;
   background: url("./code.jpg");
   background-size: cover;
-  background-position: 50% 60%;
+  background-position: 50% 50%;
+  opacity: 0.5;
   background-attachment: fixed;
   color: white;
   font-family: Quicksand, sans-serif;
