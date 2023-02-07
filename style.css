@@ -1,3 +1,4 @@
+/* Trees Image - Pexels: https://www.pexels.com/photo/photo-of-trees-in-forest-3801030/ */
 @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 
 html {
@@ -13,7 +14,7 @@ html {
 
 body {
   margin: 0;
-  background: url("./code.jpg");
+  background: url("code.jpg");
   background-size: cover;
   background-position: 50% 60%;
   background-attachment: fixed;
@@ -50,7 +51,6 @@ ul {
 /* Columns */
 .drag-column {
   flex: 1;
-
   margin: 0 10px;
   position: relative;
   background-color: rgba(0, 0, 0, 0.4);
