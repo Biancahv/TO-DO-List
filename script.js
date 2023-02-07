@@ -112,12 +112,14 @@ function updateDOM() {
     createItemEl(onHoldList, 3, onHoldItem, index);
   });
   onHoldListArray = filterArray(onHoldListArray);
+  // On Hold Column
 
   // Run getSavedColumns only once, Update Local Storage
   updatedOnLoad = true;
   updateSavedColumns();
 }
 
+// ===no
 // Update Item - Delete if necessary, or update Array value
 function updateItem(id, column) {
   const selectedArray = listArrays[column];
@@ -151,6 +153,7 @@ function hideInputBox(column) {
   addItemContainers[column].style.display = "none";
   addToColumn(column);
 }
+// no===
 
 // Allows arrays to reflect Drag and Drop Items
 function rebuildArrays() {
@@ -189,8 +192,6 @@ function dragEnter(column) {
   currentColumn = column;
 }
 
-// =====ok
-
 // Dropping Item in Column
 function drop(event) {
   event.preventDefault();
@@ -199,6 +200,7 @@ function drop(event) {
   listColumns.forEach((column) => {
     column.classList.remove("over");
   });
+
   // Add Item to Column
   const parent = listColumns[currentColumn];
   parent.appendChild(draggedItem);
