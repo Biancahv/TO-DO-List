@@ -10,7 +10,6 @@ const completeList = document.getElementById("complete-list");
 const onHoldList = document.getElementById("on-hold-list");
 
 // Items
-
 let updatedOnLoad = false;
 
 // Initialize Arrays
@@ -60,7 +59,7 @@ function updateSavedColumns() {
 // Filter Array to Remove empty items
 function filterArray(array) {
   const filteredArray = array.filter((item) => item !== null);
-  return filter;
+  return filteredArray;
 }
 
 // Create DOM Elements for each list item
@@ -119,13 +118,6 @@ function updateDOM() {
   updateSavedColumns();
 }
 
-// Show Add Item Input Box
-function showInputBox(column) {
-  addBtns[column].style.visibility = "hidden";
-  saveItemBtns[column].style.display = "flex";
-  addItemContainers[column].style.display = "flex";
-}
-
 // Update Item - Delete if necessary, or update Array value
 function updateItem(id, column) {
   const selectedArray = listArrays[column];
@@ -143,6 +135,13 @@ function addToColumn(column) {
   selectedArray.push(itemText);
   addItems[column].textContent = "";
   updateDOM();
+}
+
+// Show Add Item Input Box
+function showInputBox(column) {
+  addBtns[column].style.visibility = "hidden";
+  saveItemBtns[column].style.display = "flex";
+  addItemContainers[column].style.display = "flex";
 }
 
 // Hide Item Input Box
@@ -175,21 +174,22 @@ function rebuildArrays() {
 }
 
 // When item Starts dragging
-function drag(event) {
-  draggedItem = event.target;
+function drag(e) {
+  draggedItem = e.target;
 }
 
 // Column Allows for Items to Drop
-function allowDrop(event) {
-  event.preventDefault();
+function allowDrop(e) {
+  e.preventDefault();
 }
 
 // When Item Enters Column Area
-
 function dragEnter(column) {
   listColumns[column].classList.add("over");
   currentColumn = column;
 }
+
+// =====ok
 
 // Dropping Item in Column
 function drop(event) {
