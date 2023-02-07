@@ -58,31 +58,31 @@ ul {
   overflow-x: hidden;
 }
 
-.backlog-column .header,
-.backlog-column .solid,
-.backlog-column .solid:hover,
-.backlog-column .over {
+.waiting-column .header,
+.waiting-column .solid,
+.waiting-column .solid:hover,
+.waiting-column .over {
   background-color: var(--column-1);
 }
 
-.progress-column .header,
-.progress-column .solid,
-.progress-column .solid:hover,
-.progress-column .over {
+.inProgress-column .header,
+.inProgress-column .solid,
+.inProgress-column .solid:hover,
+.inProgress-column .over {
   background-color: var(--column-2);
 }
 
-.complete-column .header,
-.complete-column .solid,
-.complete-column .solid:hover,
-.complete-column .over {
+.completed-column .header,
+.completed-column .solid,
+.completed-column .solid:hover,
+.completed-column .over {
   background-color: var(--column-3);
 }
 
-.on-hold-column .header,
-.on-hold-column .solid,
-.on-hold-column .solid:hover,
-.on-hold-column .over {
+.canceled-column .header,
+.canceled-column .solid,
+.canceled-column .solid:hover,
+.canceled-column .over {
   background-color: var(--column-4);
 }
 

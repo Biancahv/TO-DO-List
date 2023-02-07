@@ -8,19 +8,19 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 class="main-title">To Do Status</h1>
+    <h1 class="main-title">Daily Agenda</h1>
     <div class="drag-container">
       <ul class="drag-list">
-        <!-- Backlog Column -->
-        <li class="drag-column backlog-column">
+        <!-- Waiting List Column -->
+        <li class="drag-column waiting-column">
           <span class="header">
-            <h1>Backlog</h1>
+            <h1>Waiting List</h1>
           </span>
-          <!-- Backlog Content -->
-          <div id="backlog-content" class="custom-scroll">
+          <!-- Waiting List Content -->
+          <div id="waiting-content" class="custom-scroll">
             <ul
               class="drag-item-list"
-              id="backlog-list"
+              id="waiting-list"
               ondrop="drop(event)"
               ondragover="allowDrop(event)"
               ondragenter="dragEnter(0)"
@@ -42,21 +42,23 @@
             <div class="add-item" contenteditable="true"></div>
           </div>
         </li>
-        <!-- Progress Column -->
-        <li class="drag-column progress-column">
+
+        <!-- In Progress Column -->
+        <li class="drag-column inProgress-column">
           <span class="header">
-            <h1>Progress</h1>
+            <h1>In Progress</h1>
           </span>
-          <!-- Progress Content -->
-          <div id="progress-content" class="custom-scroll">
+          <!--In Progress Content -->
+          <div id="inProgress-content" class="custom-scroll">
             <ul
               class="drag-item-list"
-              id="progress-list"
+              id="inProgress-list"
               ondrop="drop(event)"
               ondragover="allowDrop(event)"
               ondragenter="dragEnter(1)"
             ></ul>
           </div>
+
           <!-- Add Button Group -->
           <div class="add-btn-group">
             <div class="add-btn" onclick="showInputBox(1)">
@@ -71,21 +73,23 @@
             <div class="add-item" contenteditable="true"></div>
           </div>
         </li>
-        <!-- Complete Column -->
-        <li class="drag-column complete-column">
+
+        <!-- Completed Column -->
+        <li class="drag-column completed-column">
           <span class="header">
-            <h1>Complete</h1>
+            <h1>Completed</h1>
           </span>
-          <!-- Complete Content -->
-          <div id="complete-content" class="custom-scroll">
+          <!-- Completed Content -->
+          <div id="completed-content" class="custom-scroll">
             <ul
               class="drag-item-list"
-              id="complete-list"
+              id="completed-list"
               ondrop="drop(event)"
               ondragover="allowDrop(event)"
               ondragenter="dragEnter(2)"
             ></ul>
           </div>
+
           <!-- Add Button Group -->
           <div class="add-btn-group">
             <div class="add-btn" onclick="showInputBox(2)">
@@ -100,16 +104,17 @@
             <div class="add-item" contenteditable="true"></div>
           </div>
         </li>
-        <!-- On Hold Column -->
-        <li class="drag-column on-hold-column">
+
+        <!-- Canceled Column -->
+        <li class="drag-column canceled-column">
           <span class="header">
-            <h1>On Hold</h1>
+            <h1>Canceled</h1>
           </span>
-          <!-- On Hold Content -->
-          <div id="on-hold-content" class="custom-scroll">
+          <!-- Canceled Content -->
+          <div id="canceled-content" class="custom-scroll">
             <ul
               class="drag-item-list"
-              id="on-hold-list"
+              id="canceled-list"
               ondrop="drop(event)"
               ondragover="allowDrop(event)"
               ondragenter="dragEnter(3)"

@@ -4,19 +4,19 @@ const addItemContainers = document.querySelectorAll(".add-container");
 const addItems = document.querySelectorAll(".add-item");
 // Item Lists
 const listColumns = document.querySelectorAll(".drag-item-list");
-const backlogListEl = document.getElementById("backlog-list");
-const progressListEl = document.getElementById("progress-list");
-const completeListEl = document.getElementById("complete-list");
-const onHoldListEl = document.getElementById("on-hold-list");
+const waitingListEl = document.getElementById("waiting-list");
+const inProgressListEl = document.getElementById("inProgress-list");
+const completedListEl = document.getElementById("completed-list");
+const canceledListEl = document.getElementById("canceled-list");
 
 // Items
 let updatedOnLoad = false;
 
 // Initialize Arrays
-let backlogListArray = [];
-let progressListArray = [];
-let completeListArray = [];
-let onHoldListArray = [];
+let waitingListArray = [];
+let inProgressListArray = [];
+let completedListArray = [];
+let canceledListArray = [];
 let listArrays = [];
 
 // Drag Functionality
@@ -26,28 +26,28 @@ let currentColumn;
 
 // Get Arrays from localStorage if available, set default values if not
 function getSavedColumns() {
-  if (localStorage.getItem("backlogItems")) {
-    backlogListArray = JSON.parse(localStorage.backlogItems);
-    progressListArray = JSON.parse(localStorage.progressItems);
-    completeListArray = JSON.parse(localStorage.completeItems);
-    onHoldListArray = JSON.parse(localStorage.onHoldItems);
+  if (localStorage.getItem("waitingItems")) {
+    waitingListArray = JSON.parse(localStorage.waitingItems);
+    inProgressListArray = JSON.parse(localStorage.inProgressItems);
+    completedListArray = JSON.parse(localStorage.completedItems);
+    canceledListArray = JSON.parse(localStorage.canceledItems);
   } else {
-    backlogListArray = ["Release the course", "Sit back and relax"];
-    progressListArray = ["Work on projects", "Listen to music"];
-    completeListArray = ["Being cool", "Getting stuff done"];
-    onHoldListArray = ["Being uncool"];
+    waitingListArray = ["Release the course", "Sit back and relax"];
+    inProgressListArray = ["Work on projects", "Listen to music"];
+    completedListArray = ["Being cool", "Getting stuff done"];
+    canceledListArray = ["Being uncool"];
   }
 }
 
 // Set localStorage Arrays
 function updateSavedColumns() {
   listArrays = [
-    backlogListArray,
-    progressListArray,
-    completeListArray,
-    onHoldListArray,
+    waitingListArray,
+    inProgressListArray,
+    completedListArray,
+    canceledListArray,
   ];
-  const arrayNames = ["backlog", "progress", "complete", "onHold"];
+  const arrayNames = ["waiting", "inProgress", "completed", "canceled"];
   arrayNames.forEach((arrayName, index) => {
     localStorage.setItem(
       `${arrayName}Items`,
@@ -83,30 +83,30 @@ function updateDOM() {
   if (!updatedOnLoad) {
     getSavedColumns();
   }
-  // Backlog Column
-  backlogListEl.textContent = "";
-  backlogListArray.forEach((backlogItem, index) => {
-    createItemEl(backlogListEl, 0, backlogItem, index);
+  // Waiting Column
+  waitingListEl.textContent = "";
+  waitingListArray.forEach((waitingItem, index) => {
+    createItemEl(waitingListEl, 0, waitingItem, index);
   });
-  backlogListArray = filterArray(backlogListArray);
-  // Progress Column
-  progressListEl.textContent = "";
-  progressListArray.forEach((progressItem, index) => {
-    createItemEl(progressListEl, 1, progressItem, index);
+  waitingListArray = filterArray(waitingListArray);
+  // In Progress Column
+  inProgressListEl.textContent = "";
+  inProgressListArray.forEach((inProgressItem, index) => {
+    createItemEl(inProgressListEl, 1, inProgressItem, index);
   });
-  progressListArray = filterArray(progressListArray);
-  // Complete Column
-  completeListEl.textContent = "";
-  completeListArray.forEach((completeItem, index) => {
-    createItemEl(completeListEl, 2, completeItem, index);
+  inProgressListArray = filterArray(inProgressListArray);
+  // Completed Column
+  completedListEl.textContent = "";
+  completedListArray.forEach((completedItem, index) => {
+    createItemEl(completedListEl, 2, completedItem, index);
   });
-  completeListArray = filterArray(completeListArray);
-  // On Hold Column
-  onHoldListEl.textContent = "";
-  onHoldListArray.forEach((onHoldItem, index) => {
-    createItemEl(onHoldListEl, 3, onHoldItem, index);
+  completedListArray = filterArray(completedListArray);
+  // Canceled Column
+  canceledListEl.textContent = "";
+  canceledListArray.forEach((canceledItem, index) => {
+    createItemEl(canceledListEl, 3, canceledItem, index);
   });
-  onHoldListArray = filterArray(onHoldListArray);
+  canceledListArray = filterArray(canceledListArray);
   // Don't run more than once, Update Local Storage
   updatedOnLoad = true;
   updateSavedColumns();
@@ -152,21 +152,21 @@ function hideInputBox(column) {
 
 // Allows arrays to reflect Drag and Drop items
 function rebuildArrays() {
-  backlogListArray = [];
-  for (let i = 0; i < backlogListEl.children.length; i++) {
-    backlogListArray.push(backlogListEl.children[i].textContent);
+  waitingListArray = [];
+  for (let i = 0; i < waitingListEl.children.length; i++) {
+    waitingListArray.push(waitingListEl.children[i].textContent);
   }
-  progressListArray = [];
-  for (let i = 0; i < progressListEl.children.length; i++) {
-    progressListArray.push(progressListEl.children[i].textContent);
+  inProgressListArray = [];
+  for (let i = 0; i < inProgressListEl.children.length; i++) {
+    inProgressListArray.push(inProgressListEl.children[i].textContent);
   }
-  completeListArray = [];
-  for (let i = 0; i < completeListEl.children.length; i++) {
-    completeListArray.push(completeListEl.children[i].textContent);
+  completedListArray = [];
+  for (let i = 0; i < completedListEl.children.length; i++) {
+    completedListArray.push(completedListEl.children[i].textContent);
   }
-  onHoldListArray = [];
-  for (let i = 0; i < onHoldListEl.children.length; i++) {
-    onHoldListArray.push(onHoldListEl.children[i].textContent);
+  canceledListArray = [];
+  for (let i = 0; i < canceledListEl.children.length; i++) {
+    canceledListArray.push(canceledListEl.children[i].textContent);
   }
   updateDOM();
 }
@@ -198,7 +198,7 @@ function drop(e) {
   });
   // Add item to Column
   parent.appendChild(draggedItem);
-  // Dragging complete
+  // Dragging completed
   dragging = false;
   rebuildArrays();
 }
