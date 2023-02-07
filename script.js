@@ -174,13 +174,13 @@ function rebuildArrays() {
 }
 
 // When item Starts dragging
-function drag(e) {
-  draggedItem = e.target;
+function drag(event) {
+  draggedItem = event.target;
 }
 
 // Column Allows for Items to Drop
-function allowDrop(e) {
-  e.preventDefault();
+function allowDrop(event) {
+  event.preventDefault();
 }
 
 // When Item Enters Column Area
