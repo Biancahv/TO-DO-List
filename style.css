@@ -6,7 +6,7 @@ html {
 
 :root {
   --column-1: #a2622d;
-  --column-2: #1b6161;
+  --column-2: #041584;
   --column-3: #248224;
   --column-4: #a22d22;
 }
@@ -58,10 +58,10 @@ ul {
   overflow-x: hidden;
 }
 
-.backlog-column .header,
-.backlog-column .solid,
-.backlog-column .solid:hover,
-.backlog-column .over {
+.waiting-column .header,
+.waiting-column .solid,
+.waiting-column .solid:hover,
+.waiting-column .over {
   background-color: var(--column-1);
 }
 
@@ -79,10 +79,10 @@ ul {
   background-color: var(--column-3);
 }
 
-.on-hold-column .header,
-.on-hold-column .solid,
-.on-hold-column .solid:hover,
-.on-hold-column .over {
+.canceled-column .header,
+.canceled-column .solid,
+.canceled-column .solid:hover,
+.canceled-column .over {
   background-color: var(--column-4);
 }
 

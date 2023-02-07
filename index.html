@@ -11,16 +11,16 @@
     <h1 class="main-title">To Do Status</h1>
     <div class="drag-container">
       <ul class="drag-list">
-        <!-- Backlog Column -->
-        <li class="drag-column backlog-column">
+        <!-- Waiting Column -->
+        <li class="drag-column waiting-column">
           <span class="header">
             <h1>Waiting List</h1>
           </span>
-          <!-- Backlog Content -->
-          <div id="backlog-content" class="custom-scroll">
+          <!-- waiting Content -->
+          <div id="waiting-content" class="custom-scroll">
             <ul
               class="drag-item-list"
-              id="backlog-list"
+              id="waiting-list"
               ondrop="drop(event)"
               ondragover="allowDrop(event)"
               ondragenter="dragEnter(0)"
@@ -105,16 +105,16 @@
           </div>
         </li>
 
-        <!-- On Hold Column -->
-        <li class="drag-column on-hold-column">
+        <!-- Canceled Column -->
+        <li class="drag-column canceled-column">
           <span class="header">
             <h1>Canceled</h1>
           </span>
-          <!-- On Hold  Content -->
-          <div id="on-hold-content" class="custom-scroll">
+          <!-- Canceled  Content -->
+          <div id="canceled-content" class="custom-scroll">
             <ul
               class="drag-item-list"
-              id="on-hold-list"
+              id="canceled-list"
               ondrop="drop(event)"
               ondragover="allowDrop(event)"
               ondragenter="dragEnter(3)"
