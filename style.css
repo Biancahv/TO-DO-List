@@ -5,10 +5,10 @@ html {
 }
 
 :root {
-  --column-1: #a2622d;
+  --column-1: #ffa500;
   --column-2: #041584;
   --column-3: #248224;
-  --column-4: #a22d22;
+  --column-4: #ff0000;
 }
 
 body {
@@ -16,11 +16,12 @@ body {
   background: url("./code.jpg");
   background-size: cover;
   background-position: 50% 50%;
-  opacity: 0.5;
   background-attachment: fixed;
   color: white;
   font-family: Quicksand, sans-serif;
   overflow-y: hidden;
+
+  overflow: scroll;
 }
 
 h1 {
@@ -214,6 +215,22 @@ ul {
 
 .add-item:focus {
   outline: none;
+}
+
+/* Footer */
+
+.footer {
+  text-align: center;
+  background-color: #041584;
+  opacity: 0.4;
+  color: #fff;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.footer:hover {
+  opacity: 1;
 }
 
 /* Media Query: Laptop */

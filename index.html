@@ -8,136 +8,146 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 class="main-title">Tasks Overview</h1>
-    <div class="drag-container">
-      <ul class="drag-list">
-        <!-- Waiting Column -->
-        <li class="drag-column waiting-column">
-          <span class="header">
-            <h1>Waiting List</h1>
-          </span>
-          <!-- waiting Content -->
-          <div id="waiting-content" class="custom-scroll">
-            <ul
-              class="drag-item-list"
-              id="waiting-list"
-              ondrop="drop(event)"
-              ondragover="allowDrop(event)"
-              ondragenter="dragEnter(0)"
-            ></ul>
-          </div>
+    <main>
+      <h1 class="main-title">Tasks Overview</h1>
+      <div class="drag-container">
+        <ul class="drag-list">
+          <!-- Waiting Column -->
+          <li class="drag-column waiting-column">
+            <span class="header">
+              <h1>Waiting List</h1>
+            </span>
+            <!-- waiting Content -->
+            <div id="waiting-content" class="custom-scroll">
+              <ul
+                class="drag-item-list"
+                id="waiting-list"
+                ondrop="drop(event)"
+                ondragover="allowDrop(event)"
+                ondragenter="dragEnter(0)"
+              ></ul>
+            </div>
 
-          <!-- Add Button Group -->
-          <div class="add-btn-group">
-            <div class="add-btn" onclick="showInputBox(0)">
-              <span class="plus-sign">+</span>
-              <span>Add Item</span>
+            <!-- Add Button Group -->
+            <div class="add-btn-group">
+              <div class="add-btn" onclick="showInputBox(0)">
+                <span class="plus-sign">+</span>
+                <span>Add Item</span>
+              </div>
+              <div class="add-btn solid" onclick="hideInputBox(0)">
+                <span>Save Item</span>
+              </div>
             </div>
-            <div class="add-btn solid" onclick="hideInputBox(0)">
-              <span>Save Item</span>
+            <div class="add-container">
+              <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable -->
+              <div class="add-item" contenteditable="true"></div>
             </div>
-          </div>
-          <div class="add-container">
-            <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable -->
-            <div class="add-item" contenteditable="true"></div>
-          </div>
-        </li>
+          </li>
 
-        <!-- Progress Column -->
-        <li class="drag-column progress-column">
-          <span class="header">
-            <h1>In Progress</h1>
-          </span>
-          <!-- Progress Content -->
-          <div id="progress-content" class="custom-scroll">
-            <ul
-              class="drag-item-list"
-              id="progress-list"
-              ondrop="drop(event)"
-              ondragover="allowDrop(event)"
-              ondragenter="dragEnter(1)"
-            ></ul>
-          </div>
+          <!-- Progress Column -->
+          <li class="drag-column progress-column">
+            <span class="header">
+              <h1>In Progress</h1>
+            </span>
+            <!-- Progress Content -->
+            <div id="progress-content" class="custom-scroll">
+              <ul
+                class="drag-item-list"
+                id="progress-list"
+                ondrop="drop(event)"
+                ondragover="allowDrop(event)"
+                ondragenter="dragEnter(1)"
+              ></ul>
+            </div>
 
-          <!-- Add Button Group -->
-          <div class="add-btn-group">
-            <div class="add-btn" onclick="showInputBox(1)">
-              <span class="plus-sign">+</span>
-              <span>Add Item</span>
+            <!-- Add Button Group -->
+            <div class="add-btn-group">
+              <div class="add-btn" onclick="showInputBox(1)">
+                <span class="plus-sign">+</span>
+                <span>Add Item</span>
+              </div>
+              <div class="add-btn solid" onclick="hideInputBox(1)">
+                <span>Save Item</span>
+              </div>
             </div>
-            <div class="add-btn solid" onclick="hideInputBox(1)">
-              <span>Save Item</span>
+            <div class="add-container">
+              <div class="add-item" contenteditable="true"></div>
             </div>
-          </div>
-          <div class="add-container">
-            <div class="add-item" contenteditable="true"></div>
-          </div>
-        </li>
+          </li>
 
-        <!-- Complete Column -->
-        <li class="drag-column complete-column">
-          <span class="header">
-            <h1>Completed</h1>
-          </span>
-          <!-- Complete Content -->
-          <div id="complete-content" class="custom-scroll">
-            <ul
-              class="drag-item-list"
-              id="complete-list"
-              ondrop="drop(event)"
-              ondragover="allowDrop(event)"
-              ondragenter="dragEnter(2)"
-            ></ul>
-          </div>
+          <!-- Complete Column -->
+          <li class="drag-column complete-column">
+            <span class="header">
+              <h1>Completed</h1>
+            </span>
+            <!-- Complete Content -->
+            <div id="complete-content" class="custom-scroll">
+              <ul
+                class="drag-item-list"
+                id="complete-list"
+                ondrop="drop(event)"
+                ondragover="allowDrop(event)"
+                ondragenter="dragEnter(2)"
+              ></ul>
+            </div>
 
-          <!-- Add Button Group -->
-          <div class="add-btn-group">
-            <div class="add-btn" onclick="showInputBox(2)">
-              <span class="plus-sign">+</span>
-              <span>Add Item</span>
+            <!-- Add Button Group -->
+            <div class="add-btn-group">
+              <div class="add-btn" onclick="showInputBox(2)">
+                <span class="plus-sign">+</span>
+                <span>Add Item</span>
+              </div>
+              <div class="add-btn solid" onclick="hideInputBox(2)">
+                <span>Save Item</span>
+              </div>
             </div>
-            <div class="add-btn solid" onclick="hideInputBox(2)">
-              <span>Save Item</span>
+            <div class="add-container">
+              <div class="add-item" contenteditable="true"></div>
             </div>
-          </div>
-          <div class="add-container">
-            <div class="add-item" contenteditable="true"></div>
-          </div>
-        </li>
+          </li>
 
-        <!-- Canceled Column -->
-        <li class="drag-column canceled-column">
-          <span class="header">
-            <h1>Canceled</h1>
-          </span>
-          <!-- Canceled  Content -->
-          <div id="canceled-content" class="custom-scroll">
-            <ul
-              class="drag-item-list"
-              id="canceled-list"
-              ondrop="drop(event)"
-              ondragover="allowDrop(event)"
-              ondragenter="dragEnter(3)"
-            ></ul>
-          </div>
+          <!-- Canceled Column -->
+          <li class="drag-column canceled-column">
+            <span class="header">
+              <h1>Canceled</h1>
+            </span>
+            <!-- Canceled  Content -->
+            <div id="canceled-content" class="custom-scroll">
+              <ul
+                class="drag-item-list"
+                id="canceled-list"
+                ondrop="drop(event)"
+                ondragover="allowDrop(event)"
+                ondragenter="dragEnter(3)"
+              ></ul>
+            </div>
 
-          <!-- Add Button Group -->
-          <div class="add-btn-group">
-            <div class="add-btn" onclick="showInputBox(3)">
-              <span class="plus-sign">+</span>
-              <span>Add Item</span>
+            <!-- Add Button Group -->
+            <div class="add-btn-group">
+              <div class="add-btn" onclick="showInputBox(3)">
+                <span class="plus-sign">+</span>
+                <span>Add Item</span>
+              </div>
+              <div class="add-btn solid" onclick="hideInputBox(3)">
+                <span>Save Item</span>
+              </div>
             </div>
-            <div class="add-btn solid" onclick="hideInputBox(3)">
-              <span>Save Item</span>
+            <div class="add-container">
+              <div class="add-item" contenteditable="true"></div>
             </div>
-          </div>
-          <div class="add-container">
-            <div class="add-item" contenteditable="true"></div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <!-- Script -->
-    <script src="script.js"></script>
+          </li>
+        </ul>
+      </div>
+      <!-- Script -->
+      <script src="script.js"></script>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p class="footer">
+          Copyright © 2023 - By Bianca Hutanu. All rights reserved.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

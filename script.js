@@ -151,23 +151,21 @@ function hideInputBox(column) {
 }
 
 // Allows arrays to reflect Drag and Drop items
+
+//https://stackoverflow.com/questions/29640254/when-why-to-use-map-reduce-over-for-loops
 function rebuildArrays() {
-  waitingListArray = [];
-  for (let i = 0; i < waitingListEl.children.length; i++) {
-    waitingListArray.push(waitingListEl.children[i].textContent);
-  }
-  progressListArray = [];
-  for (let i = 0; i < progressListEl.children.length; i++) {
-    progressListArray.push(progressListEl.children[i].textContent);
-  }
-  completeListArray = [];
-  for (let i = 0; i < completeListEl.children.length; i++) {
-    completeListArray.push(completeListEl.children[i].textContent);
-  }
-  canceledListArray = [];
-  for (let i = 0; i < canceledListEl.children.length; i++) {
-    canceledListArray.push(canceledListEl.children[i].textContent);
-  }
+  waitingListArray = Array.from(waitingListEl.children).map(
+    (i) => i.textContent
+  );
+  progressListArray = Array.from(progressListEl.children).map(
+    (i) => i.textContent
+  );
+  completeListArray = Array.from(completeListEl.children).map(
+    (i) => i.textContent
+  );
+  canceledListArray = Array.from(canceledListEl.children).map(
+    (i) => i.textContent
+  );
   updateDOM();
 }
 
