@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  background: url("./code.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  color: white;
+  font-family: Quicksand, sans-serif;
+  overflow-y: hidden;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+
+  background-color: #041584;
+
+  padding: 0;
+  margin: 0;
+
+  padding: 10px;
+  text-align: center;
+}
+
+nav li {
+  flex: 1;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background-color: #041584;
+  opacity: 0.4;
+  color: #fff;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
+}
+.footer:hover {
+  opacity: 1;
+}
